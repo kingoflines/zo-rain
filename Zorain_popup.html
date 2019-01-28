@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ZO-RAIN</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="style_scripts.js">
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=0.9"> 
+  <script type="text/javascript" src="jquery-3.3.1.min.js">
+  </script>
+<script src="JSPOPUP.js">
+</script>
+  <link rel="stylesheet" type="text/css" href="fonts.css">
+</head>
+
+<body onresize="scrollFunction('mid_block')">
+
+
+<div class="top_menu" id="top_menu">
+    
+    
+     <span class="logo"><img id="zologo" src="https://i.ibb.co/MCbRLzH/beyazlogo.png"></span>
+     <label class="mobile_search">
+      <input type="checkbox" name="mobile_search_popup_checkbox" id="cb2" onclick="openSearch()">
+     <span><i class="fas fa-search"></i></span>
+   </label>
+
+      <label class="menulabel">
+      <span class="menu">MENU
+        <input type="checkbox" class="menubox" id="ch1" onclick="openmenu()">
+       </input> 
+        <i class="fas fa-bars"></i>
+      
+     </span>
+     </label>
+
+      <div class="top_search">
+       <div class="search_label">
+       <input type="text" name="search" class="search_box">
+       <button class="search_button hoverlay">Ara</button>
+       </div>
+     </div>
+
+</div>
+
+
+<div class="mobile_search_popup">
+  <span id="triangle"> </span>
+        <div id="block">
+          
+          <dir class="block_search" id="block_search">
+            <input type="text" name="search" class="block_search_box">
+            <button class="mobile_search_button hoverlay">Ara</button>
+          </dir>
+
+
+        </div>
+
+</div>
+  
+    <div class="sign_in_up" id="sign_in_up">
+      <div class="container
+      ">
+      <form>
+      <label>ID : 
+        <input type="text" name="ID" placeholder="Kullanıcı adınızı giriniz.">
+      </label>
+      <label>Şifre : 
+        <input type="password" name="Sifre" placeholder="Şifrenizi giriniz.">
+        <button class="hoverlay" id="sign_inb">Giriş Yap</button>
+      </label>
+    </form>
+
+            <button class="sign_upb hoverlay" onClick="kayit();">Kayıt Ol</button>
+          </div>
+    </div>
+    
+  
+  <div class="open_menu" id="omenu1">
+    <button class="header" onclick="closemenu()">MENU</button>
+    <span class="container">
+    <ul>
+      <li>Anasayfa</li>
+      <li>Haberler</li>
+      <li>Kategoriler</li>
+      <li>Hakkımızda</li>
+      <li>İletişim</li>
+    </ul>
+    </span>
+    <div class="sign_in_up_mobile">
+      <button class="mobile_sign_in hoverlay">Giriş yap</button>
+      <button class="mobile_sign_up hoverlay">Kayıt ol</button>
+    </div>
+  </div>
+  
+  
+  <div class="mid_block" id="mid_block" onscroll="scrollFunction('mid_block')">
+    <div class="slider" id="slider">
+      <img id="slide_picture" src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
+      <div class="slide_nav">
+        <label>
+          <input type="radio" class="picture_radio" name="picture" id="picture_radio1" checked="" onclick="slideshow()">
+          <span class="checkmark" id="picture_radio1_checkmark"></span>
+        </label>
+        <label>
+          <input type="radio" class="picture_radio" name="picture" id="picture_radio2" onclick="slideshow()">
+          <span class="checkmark" id="picture_radio2_checkmark"></span>
+        </label>
+
+
+
+      </div>
+
+    </div>
+
+
+ 		
+
+  	<div class="trends_block" id="trends_block">
+
+      <span class="trend_header">Editörlerimizin Seçtikleri</span>
+      <div class="category_container">
+      <span class="trend_category"><img src="http://www.edmition.com/wp-content/uploads/2016/02/kol-achievements.jpg"><span class="title">Dinamik Başlık</span>
+      </span>
+      </div>
+
+      <span class="trend_header">En Çok Okunan Tasarım Makaleleri</span>
+      <div class="category_container">
+      <span class="trend_category"><img src="https://www.canva.com/learn/wp-content/uploads/2018/08/Essential-Canva-ToolsResized.png"><span class="title">Dinamik Başlık</span>
+      </span>
+      </div>
+
+      <span class="trend_header">En Çok Okunan Yazılım Makaleleri</span>
+      
+      <div class="category_container">
+      <span class="trend_category"><img src="http://smartsoftcolombia.com/portal/images/code-shutterstock.gif"><span class="title">Dinamik Başlık</span>
+      </span>
+      </div>
+  	</div>
+
+  	<div class="copyright_block">
+     <p><br>2019 ©</p>
+    </div>
+
+  </div>
+  
+</body>
+</html>

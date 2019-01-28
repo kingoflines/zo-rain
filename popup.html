@@ -1,0 +1,185 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="fonts.css">
+	<style type="text/css">
+	
+	#kayitol {
+	width:90px;
+	height:50px;
+	font-size:18;
+	font-style:italic;
+	font-family:Calibri;
+	background-color:#318c00;
+	color:white;
+	border-radius:15px 15px 15px 15px;
+	position:relative;
+	top:90px;
+	left:47px;
+	}
+	
+	#sozlesme {
+	position:absolute;
+	top:468px;
+	left:0px;
+	width:240px;
+	}
+	
+	body {
+	background-color:#45464D;
+	}
+	
+	#ZO {
+	position:absolute;
+	left:50px;
+	}
+	
+	#input,#Psw,#Pswcon {
+	width:180px;
+	height:34px;
+	border-radius:7px 7px 7px 7px;
+	}
+	
+	label {
+	color:#7BC3C0;
+	
+	}
+	#menu {
+	margin-left:50px;
+	}
+	
+	legend,a{
+	color:#EF72B5;
+	}
+	
+	fieldset{
+	width:190px;
+	border-radius:30px 0px 30px 0px;
+	position:absolute;
+	top:135px;
+	height:440px;
+	}
+	
+	#madde1,#madde2,#madde3,#madde4	{
+	font-size:15;
+	font-family:Gill Sans;
+	}
+	
+	#Sartlar {
+	visibility:hidden;
+	position:absolute;
+	left:5px;
+	background-color:#292929;
+	width:192px;
+	border-radius:15px 0px 15px 0px;
+	height:70px;
+	padding:5px;
+	}
+	.yanlis {
+	color:#FF4141;
+	}
+	.dogru{
+	color:#3BFD4E;
+	}
+	</style>
+	<title>Popup</title>
+</head>
+
+<body>
+	<img id="ZO"src="https://i.ibb.co/MCbRLzH/beyazlogo.png" width="235" height="115"/><br><br><br><br>
+	<div class="container" id="menu" class="div"><fieldset><legend>Kayıt Ol</legend>
+		<form id="form" name="form" action="Gonder.php" >
+		<label for="isim"><b>İsim*<b></label><br>
+		<input id="input" type="text" placeholder="İsminizi giriniz" required></input><br>
+		<label for="soyisim"><b>Soyisim*<b></label><br>
+		<input id="input" type="text" placeholder="Soyisminizi giriniz" required></input><br>
+		<label for="email"><b>Email*<b></label><br>
+		<input id="input" type="text" placeholder="email adresinizi giriniz" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z.-]{2,}$" required></input><br>
+		<label for="Psw"><b>Şifre*<b></label><br>
+		<input name="Sifrem" id="Psw" type="password" placeholder="Şifrenizi giriniz" pattern="(?=.*[a-z])(?=.*\d)(?=.*[A-Z]).{6,}" required></input><br>
+		<label for="soyisim"><b>Şifre Tekrar*<b></label><br>
+		<input name="SifremOnay" id="Pswcon" type="password" placeholder="Şifrenizi onaylayınız" required></input><br><br>
+		
+		<div id="Sartlar" onload="sartlarsil();" >
+		<span id="madde1" class="yanlis">* En az bir <em>sayı</em> içermeli</span><br>
+		<span id="madde2" class="yanlis">* En az bir harf <em>büyük</em> olmalı</span><br>
+		<span id="madde3" class="yanlis">* En az bir harf <em>küçük</em> olmalı</span><br>
+		<span id="madde4" class="yanlis">* En az <em>6</em> karakter içermeli</span><br>
+		</div>
+
+		<script>
+	
+		var sifrem=document.getElementById("Psw");
+		var sifremOnay=document.getElementById("Pswcon");
+		var birsayi=document.getElementById("madde1");
+		var buyukharf=document.getElementById("madde2");
+		var kucukharf=document.getElementById("madde3");
+		var uzunluk=document.getElementById("madde4");
+		
+		
+		sifrem.onfocus =function sartlar(){
+		document.getElementById("Sartlar").style.visibility="visible";
+		}
+		sifrem.onblur=function sartlarsil(){
+		document.getElementById("Sartlar").style.visibility="hidden";
+		}
+		function mouseon(){
+		document.getElementById("kayitol").style.backgroundColor="red";
+		}
+		function mouseoff(){
+		document.getElementById("kayitol").style.backgroundColor="rgb(49, 140, 0)";
+		}
+		sifrem.onkeyup=function sifreozellik(){
+		var kkucukHarf=/[a-z]/g;
+		if( sifrem.value.match(kkucukHarf)){
+		document.getElementById("madde3").className="dogru";
+		}
+		else{
+		document.getElementById("madde3").className="yanlis";
+
+		}
+		var bbuyukHarf=/[A-Z]/g;
+		if(sifrem.value.match(bbuyukHarf)){
+		document.getElementById("madde2").className="dogru";
+
+		}
+		else{
+		document.getElementById("madde2").className="yanlis";
+
+		}
+		var EnazBirSayi=/[0-9]/g;
+		if(sifrem.value.match(EnazBirSayi)){
+		document.getElementById("madde1").className="dogru";
+
+		}else{
+		document.getElementById("madde1").className="yanlis";
+		
+		}
+		
+		var Uzunluk=sifrem.value.length
+		if(Uzunluk>=6){
+			document.getElementById("madde4").className="dogru";
+
+		
+		}else{
+			document.getElementById("madde4").className="yanlis";
+		}
+	    }
+		function sifreonay(){
+		if(document.form.Sifrem.value==document.form.SifremOnay.value)
+		{}
+		else{
+		alert("Şifreleriniz eşleşmemektedir!");
+		}
+		
+		}
+		
+	</script>
+<div id="sozlesme"><input id="okudum" type="checkbox" required>Kullanıcı sözleşmesini <a href="sozlesmekoymamizlazim">okudum</a> ve kabul ediyorum</input></div>
+		<button type="submit" id="kayitol" onmouseover="mouseon();" 
+		onmouseout="mouseoff();"onClick="sifreonay();" onClick="checkbox();" onClick="">Kayıt Ol</button>
+		</form></fieldset>
+	</div>
+
+</body>
+
+</html>
